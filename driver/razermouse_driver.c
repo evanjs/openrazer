@@ -86,6 +86,7 @@ static int razer_get_report(struct hid_device *hdev, struct razer_report *reques
     case USB_DEVICE_ID_RAZER_ATHERIS_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
         return razer_get_usb_response(hdev, index, request, index, response, RAZER_ATHERIS_RECEIVER_WAIT_US);
         break;
 
@@ -654,6 +655,10 @@ static ssize_t razer_attr_read_device_type(struct device *dev, struct device_att
         device_type = "Razer Orochi V2 (Receiver)";
         break;
 
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
+        device_type = "Razer Orochi V2 2026 (Receiver)";
+        break;
+
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
         device_type = "Razer Orochi V2 (Bluetooth)";
         break;
@@ -812,6 +817,7 @@ static ssize_t razer_attr_read_firmware_version(struct device *dev, struct devic
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -1474,6 +1480,7 @@ static ssize_t razer_attr_read_device_serial(struct device *dev, struct device_a
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -1619,6 +1626,7 @@ static ssize_t razer_attr_read_charge_level(struct device *dev, struct device_at
     case USB_DEVICE_ID_RAZER_ATHERIS_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
     case USB_DEVICE_ID_RAZER_DEATHADDER_V2_X_HYPERSPEED:
@@ -1712,6 +1720,7 @@ static ssize_t razer_attr_read_charge_status(struct device *dev, struct device_a
     case USB_DEVICE_ID_RAZER_BASILISK_X_HYPERSPEED:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_DEATHADDER_V2_X_HYPERSPEED:
     case USB_DEVICE_ID_RAZER_NAGA_V2_HYPERSPEED_RECEIVER:
     case USB_DEVICE_ID_RAZER_VIPER_V3_HYPERSPEED:
@@ -1957,6 +1966,7 @@ static ssize_t razer_attr_read_poll_rate(struct device *dev, struct device_attri
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -2174,6 +2184,7 @@ static ssize_t razer_attr_write_poll_rate(struct device *dev, struct device_attr
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -2602,6 +2613,7 @@ static ssize_t razer_attr_write_dpi(struct device *dev, struct device_attribute 
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -2762,6 +2774,7 @@ static ssize_t razer_attr_read_dpi(struct device *dev, struct device_attribute *
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -3165,6 +3178,7 @@ static ssize_t razer_attr_write_dpi_stages(struct device *dev, struct device_att
     switch(device->usb_pid) {
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
     case USB_DEVICE_ID_RAZER_NAGA_PRO_WIRED:
@@ -3284,6 +3298,7 @@ static ssize_t razer_attr_read_dpi_stages(struct device *dev, struct device_attr
     switch(device->usb_pid) {
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
     case USB_DEVICE_ID_RAZER_NAGA_PRO_WIRED:
@@ -3491,6 +3506,7 @@ static ssize_t razer_attr_read_device_idle_time(struct device *dev, struct devic
     case USB_DEVICE_ID_RAZER_BASILISK_ULTIMATE_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
         request.transaction_id.id = 0xFF;
         break;
 
@@ -3599,6 +3615,7 @@ static ssize_t razer_attr_write_device_idle_time(struct device *dev, struct devi
     case USB_DEVICE_ID_RAZER_BASILISK_ULTIMATE_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
         request.transaction_id.id = 0xFF;
         break;
 
@@ -3686,6 +3703,7 @@ static ssize_t razer_attr_read_charge_low_threshold(struct device *dev, struct d
     case USB_DEVICE_ID_RAZER_BASILISK_ULTIMATE_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_DEATHADDER_V2_X_HYPERSPEED:
     case USB_DEVICE_ID_RAZER_VIPER_V2_PRO_WIRED:
     case USB_DEVICE_ID_RAZER_VIPER_V2_PRO_WIRELESS:
@@ -3792,6 +3810,7 @@ static ssize_t razer_attr_write_charge_low_threshold(struct device *dev, struct 
     case USB_DEVICE_ID_RAZER_BASILISK_ULTIMATE_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_DEATHADDER_V2_X_HYPERSPEED:
     case USB_DEVICE_ID_RAZER_VIPER_V2_PRO_WIRED:
     case USB_DEVICE_ID_RAZER_VIPER_V2_PRO_WIRELESS:
@@ -3994,6 +4013,7 @@ static ssize_t razer_attr_write_device_mode(struct device *dev, struct device_at
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -4168,6 +4188,7 @@ static ssize_t razer_attr_read_device_mode(struct device *dev, struct device_att
     case USB_DEVICE_ID_RAZER_BASILISK_V2:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
     case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+    case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
     case USB_DEVICE_ID_RAZER_BASILISK_V3:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
     case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
@@ -7479,6 +7500,7 @@ static int razer_mouse_probe(struct hid_device *hdev, const struct hid_device_id
         case USB_DEVICE_ID_RAZER_BASILISK_X_HYPERSPEED:
         case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
         case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+        case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
         case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
         case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
         case USB_DEVICE_ID_RAZER_DEATHADDER_V2_X_HYPERSPEED:
@@ -8627,6 +8649,7 @@ static void razer_mouse_disconnect(struct hid_device *hdev)
         case USB_DEVICE_ID_RAZER_BASILISK_X_HYPERSPEED:
         case USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER:
         case USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH:
+        case USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER:
         case USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER:
         case USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED:
         case USB_DEVICE_ID_RAZER_DEATHADDER_V2_X_HYPERSPEED:
@@ -8918,6 +8941,7 @@ static const struct hid_device_id razer_devices[] = {
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_VIPER_8K) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_OROCHI_V2_RECEIVER) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_OROCHI_V2_BLUETOOTH) },
+    { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_OROCHI_V2_2026_RECEIVER) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_PRO_CLICK_RECEIVER) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_PRO_CLICK_WIRED) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_VIPER_V2_PRO_WIRED) },
